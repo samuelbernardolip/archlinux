@@ -1,6 +1,7 @@
 # repo files
 ssnb*
 repo_update
+*.git
 
 # chroot
 chroot/
