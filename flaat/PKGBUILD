@@ -1,0 +1,35 @@
+# Maintainer: Samuel Bernardo <samuel at lip dot pt>
+
+pkgbase=python-flaat
+pkgname=('python-flaat')
+pkgver=0.9.0
+_pkgvergit=0.9
+pkgrel=1
+pkgdesc="FLAsk support for handling oidc Access Tokens"
+arch=('any')
+url="https://github.com/indigo-dc/flaat"
+license=('MIT')
+makedepends=('python-setuptools' 'python-pip' 'python-wheel')
+depends=('python-flask' 'python-aiohttp' 'python-requests')
+checkdepends=('python-pytest-httpbin' 'python-pytest-mock' 'python-pysocks' 'python-pyopenssl')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/indigo-dc/flaat/archive/v$_pkgvergit.tar.gz")
+sha256sums=('728850eaf4ccb5e14e697fd4773446ca7cca072d0863504d5d8e5b439a21f535')
+
+build() {
+  cd "$srcdir"/flaat-$_pkgvergit
+  python setup.py build
+}
+
+check() {
+  cd flaat-$pkgvergit
+  pytest tests
+}
+
+package_python-flaat() {
+  #depends=('python-pbr')
+  #optdepends=('python-pysocks: SOCKS proxy support')
+
+  cd "$srcdir"/flaat-$_pkgvergit
+  python setup.py install --skip-build -O1 --root="$pkgdir"
+}
+

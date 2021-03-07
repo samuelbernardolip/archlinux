@@ -1,0 +1,22 @@
+pkgbase = python-flaat
+	pkgdesc = FLAsk support for handling oidc Access Tokens
+	pkgver = 0.9.0
+	pkgrel = 1
+	url = https://github.com/indigo-dc/flaat
+	arch = any
+	license = MIT
+	checkdepends = python-pytest-httpbin
+	checkdepends = python-pytest-mock
+	checkdepends = python-pysocks
+	checkdepends = python-pyopenssl
+	makedepends = python-setuptools
+	makedepends = python-pip
+	makedepends = python-wheel
+	depends = python-flask
+	depends = python-aiohttp
+	depends = python-requests
+	source = python-flaat-0.9.0.tar.gz::https://github.com/indigo-dc/flaat/archive/v0.9.tar.gz
+	sha256sums = 728850eaf4ccb5e14e697fd4773446ca7cca072d0863504d5d8e5b439a21f535
+
+pkgname = python-flaat
+
